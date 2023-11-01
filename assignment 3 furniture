@@ -1,0 +1,32 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Choose a type of wood for your table (Pine, Oak, Mahogany): ");
+        string woodChoice = Console.ReadLine().ToLower(); // Convert input to lowercase for case-insensitive comparison
+
+        double tablePrice = 0.0;
+
+        if (woodChoice == "pine")
+        {
+            tablePrice = 100.0;
+        }
+        else if (woodChoice == "oak")
+        {
+            tablePrice = 225.0;
+        }
+        else if (woodChoice == "mahogany")
+        {
+            tablePrice = 310.0;
+        }
+        else
+        {
+            Console.WriteLine("Invalid wood choice. Please choose from Pine, Oak, or Mahogany.");
+            return; // Exit the program
+        }
+
+        Console.WriteLine($"The price for a {woodChoice} table is ${tablePrice}");
+    }
+}
