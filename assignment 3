@@ -1,0 +1,46 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int choice;
+
+        do
+        {
+            Console.WriteLine("Menu:");
+            Console.WriteLine("0. Exit the program");
+            Console.WriteLine("1. Calculate area");
+            Console.WriteLine("2. Calculate volume");
+            Console.WriteLine("3. Calculate surface area");
+            Console.Write("Enter your choice: ");
+
+            if (int.TryParse(Console.ReadLine(), out choice))
+            {
+                switch (choice)
+                {
+                    case 0:
+                        Console.WriteLine("Exit the program");
+                        break;
+                    case 1:
+                        Console.WriteLine("Calculate area");
+                        break;
+                    case 2:
+                        Console.WriteLine("Calculate volume");
+                        break;
+                    case 3:
+                        Console.WriteLine("Calculate surface area");
+                        break;
+                    default:
+                        Console.WriteLine("ERROR: Invalid choice");
+                        break;
+                }
+            }
+            else
+            {
+                Console.WriteLine("ERROR: Invalid choice (not a number)");
+            }
+
+        } while (choice != 0);
+    }
+}
