@@ -1,0 +1,41 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Welcome to the Tuition Calculator!");
+
+        // Cost per course constants
+        const int DomesticCourseCost = 325;
+        const int InternationalCourseCost = 1375;
+
+        Console.Write("Enter the number of courses you want to take: ");
+        if (int.TryParse(Console.ReadLine(), out int numberOfCourses))
+        {
+            Console.Write("Are you a domestic student (D) or an international student (I)? Enter D or I: ");
+            char residencyStatus = char.ToUpper(Console.ReadLine()[0]); // Convert to uppercase
+
+            int totalCost = 0;
+
+            if (residencyStatus == 'D')
+            {
+                totalCost = DomesticCourseCost * numberOfCourses;
+                Console.WriteLine($"Your tuition for {numberOfCourses} domestic course(s) is ${totalCost}");
+            }
+            else if (residencyStatus == 'I')
+            {
+                totalCost = InternationalCourseCost * numberOfCourses;
+                Console.WriteLine($"Your tuition for {numberOfCourses} international course(s) is ${totalCost}");
+            }
+            else
+            {
+                Console.WriteLine("Invalid residency status. Please enter 'D' for domestic or 'I' for international.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Invalid input. Please enter a valid number of courses.");
+        }
+    }
+}
