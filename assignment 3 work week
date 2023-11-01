@@ -1,0 +1,31 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter a day of the week: ");
+        string day = Console.ReadLine().ToLower(); // Convert input to lowercase
+
+        string message = "";
+
+        if (day == "sun")
+        {
+            message = "Home";
+        }
+        else if (day == "wed")
+        {
+            message = "Home";
+        }
+        else if (day == "mon" || day == "tue" || day == "thu" || day == "fri" || day == "sat")
+        {
+            message = "Work";
+        }
+        else
+        {
+            message = "Invalid input. Please enter a valid day of the week.";
+        }
+
+        Console.WriteLine(message);
+    }
+}
